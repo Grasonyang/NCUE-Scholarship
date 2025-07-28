@@ -2,6 +2,8 @@
 
 此專案為國立彰化師範大學的獎學金管理與申請平台，以 **Next.js 15** 與 **React 19** 建製，並整合 **Supabase** 做為後端服務。同時也提供 AI 助理功能，協助學生尋找適合的獎學金。
 
+專案已整合自訂的 Supabase 認證流程，無須再使用 `@supabase/auth-helpers-nextjs` 套件。
+
 ## 安裝步驟
 1. 將 `.env.template` 複製成 `.env.local` 並填入 Supabase 相關參數。
 2. 安裝依賴：

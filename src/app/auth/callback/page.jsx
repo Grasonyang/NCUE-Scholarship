@@ -1,19 +1,22 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { useRouter, useSearchParams } from 'next/navigation';
-import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
+import { useRouter } from 'next/navigation';
+import { supabase } from '@/lib/supabase/client';
 
 export default function AuthCallback() {
   const router = useRouter();
-  const searchParams = useSearchParams();
   const [status, setStatus] = useState('處理中...');
-  const supabase = createClientComponentClient();
 
   useEffect(() => {
     const handleAuthCallback = async () => {
       try {
-        // 處理認證回調
+        // 取得URL中的 code 參數並交換 session
+        const code = new URLSearchParams(window.location.search).get('code');
+        if (code) {
+          await supabase.auth.exchangeCodeForSession(code);
+        }
+
         const { data, error } = await supabase.auth.getSession();
         
         if (error) {
@@ -78,7 +81,7 @@ export default function AuthCallback() {
     };
 
     handleAuthCallback();
-  }, [router, supabase]);
+  }, [router]);
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50">
