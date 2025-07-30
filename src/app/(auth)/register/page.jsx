@@ -104,13 +104,13 @@ export default function Register() {
     setMessage("");
     
     try {
-      // 準備用戶資料
-      const userData = {
-        name: formData.name,
-        student_id: formData.studentId,
-        department: formData.department,
-        year: formData.year
-      };
+      // 將表單資料完整傳送，僅移除確認密碼欄位
+      const userData = { ...formData };
+      delete userData.confirmPassword;
+
+      // 將 studentId 轉為符合資料庫欄位的 student_id
+      userData.student_id = userData.studentId;
+      delete userData.studentId;
 
       const result = await signUp(formData.email, formData.password, userData);
       
