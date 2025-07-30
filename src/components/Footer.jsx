@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className="bg-gray-800 text-white py-12 mt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* 關於平台 */}
           <div className="text-center md:text-left">
             <h3 className="text-xl font-bold mb-4 text-orange-400">
@@ -24,9 +24,9 @@ export default function Footer() {
               相關資源
             </h3>
             <div className="space-y-3">
-              <Link 
-                href="https://www.ncue.edu.tw" 
-                className="flex items-center justify-center md:justify-start gap-2 text-gray-300 hover:text-white transition-colors duration-300"
+              <Link
+                href="https://www.ncue.edu.tw"
+                className="flex items-center justify-center md:justify-start gap-2 text-gray-300 hover:text-accent-400 transition-colors duration-300"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -35,9 +35,9 @@ export default function Footer() {
                 </svg>
                 彰師大 主編組首頁
               </Link>
-              <Link 
-                href="https://www.facebook.com/ncue.edu.tw" 
-                className="flex items-center justify-center md:justify-start gap-2 text-gray-300 hover:text-white transition-colors duration-300"
+              <Link
+                href="https://www.facebook.com/ncue.edu.tw"
+                className="flex items-center justify-center md:justify-start gap-2 text-gray-300 hover:text-accent-400 transition-colors duration-300"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -46,14 +46,40 @@ export default function Footer() {
                 </svg>
                 彰師大 主編組 FB
               </Link>
-              <Link 
-                href="/faq" 
-                className="flex items-center justify-center md:justify-start gap-2 text-gray-300 hover:text-white transition-colors duration-300"
+              <Link
+                href="/faq"
+                className="flex items-center justify-center md:justify-start gap-2 text-gray-300 hover:text-accent-400 transition-colors duration-300"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clipRule="evenodd" />
                 </svg>
                 詢問獎學金相關問題
+              </Link>
+            </div>
+          </div>
+
+          {/* 聯絡我們 */}
+          <div className="text-center md:text-left">
+            <h3 className="text-xl font-bold mb-4 text-orange-400">聯絡我們</h3>
+            <div className="space-y-3">
+              <Link
+                href="mailto:contact@ncue-scholarship.tw"
+                className="flex items-center justify-center md:justify-start gap-2 text-gray-300 hover:text-accent-400 transition-colors duration-300"
+              >
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                  <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                </svg>
+                聯繫開發者
+              </Link>
+              <Link
+                href="/platform-feedback"
+                className="flex items-center justify-center md:justify-start gap-2 text-gray-300 hover:text-accent-400 transition-colors duration-300"
+              >
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M18 5v8a2 2 0 01-2 2h-5l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2h12a2 2 0 012 2zM7 8H5v2h2V8zm2 0h2v2H9V8zm6 0h-2v2h2V8z" clipRule="evenodd" />
+                </svg>
+                平台問題回報
               </Link>
             </div>
           </div>
@@ -76,25 +102,6 @@ export default function Footer() {
               <div className="text-white font-medium">
                 Grason Yang
               </div>
-              <Link 
-                href="mailto:contact@ncue-scholarship.tw" 
-                className="flex items-center justify-center md:justify-start gap-2 text-gray-300 hover:text-white transition-colors duration-300"
-              >
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-                  <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-                </svg>
-                聯繫開發者
-              </Link>
-              <Link 
-                href="/platform-feedback" 
-                className="flex items-center justify-center md:justify-start gap-2 text-gray-300 hover:text-white transition-colors duration-300"
-              >
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M18 5v8a2 2 0 01-2 2h-5l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2h12a2 2 0 012 2zM7 8H5v2h2V8zm2 0h2v2H9V8zm6 0h-2v2h2V8z" clipRule="evenodd" />
-                </svg>
-                平台問題回報
-              </Link>
             </div>
           </div>
         </div>
