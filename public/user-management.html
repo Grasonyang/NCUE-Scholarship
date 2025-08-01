@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>使用者管理</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .nav-link.active {
+            color: #1d4ed8; /* blue-700 */
+            border-bottom: 2px solid #1d4ed8;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+
+    <header class="bg-white shadow">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <nav class="flex items-center space-x-8 h-16">
+                <a href="#" class="nav-link flex items-center space-x-2 text-gray-500 hover:text-gray-900 transition-colors duration-200 py-4">
+                    <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+                    <span>公告管理</span>
+                </a>
+                <a href="#" class="nav-link active flex items-center space-x-2 text-blue-700 font-medium border-b-2 border-blue-700 py-4">
+                    <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292m0 2.507A6.994 6.994 0 0115.5 15H9.5a6.994 6.994 0 013.5-3.347zM4 19v-2a4 4 0 014-4h8a4 4 0 014 4v2"></path></svg>
+                    <span>使用者管理</span>
+                </a>
+                <a href="#" class="nav-link flex items-center space-x-2 text-gray-500 hover:text-gray-900 transition-colors duration-200 py-4">
+                    <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span>使用說明</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div class="bg-white rounded-lg shadow p-6">
+            
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-4 sm:mb-0">使用者列表</h2>
+                <div class="relative w-full sm:w-1/3">
+                    <input type="text" placeholder="搜尋姓名、學號、信箱..." class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                    <svg class="h-5 w-5 text-gray-400 absolute left-3 top-1/2 transform -translate-y-1/2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
+                </div>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">學號</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">姓名</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">電子信箱</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">權限</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">S1354011</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">張翊泰</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">kirito107xxx@gmail.com</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">管理員</span>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-left text-sm font-medium">
+                                <a href="#" class="inline-flex items-center text-blue-600 hover:text-blue-900 transition-colors duration-200 mr-2">
+                                    <svg class="h-4 w-4 mr-1" fill="currentColor" viewBox="0 0 20 20"><path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"></path></svg>
+                                    設為使用者
+                                </a>
+                                <a href="#" class="inline-flex items-center text-blue-600 hover:text-blue-900 transition-colors duration-200 mr-2">
+                                    <svg class="h-4 w-4 mr-1" fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884zM18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
+                                    寄信
+                                </a>
+                                <a href="#" class="inline-flex items-center text-red-600 hover:text-red-900 transition-colors duration-200">
+                                    <svg class="h-4 w-4 mr-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"></path></svg>
+                                    刪除
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">M1154007</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">鄧弘易</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">tgh120893@gmail.com</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">管理員</span>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-left text-sm font-medium">
+                                <a href="#" class="inline-flex items-center text-blue-600 hover:text-blue-900 transition-colors duration-200 mr-2">
+                                    <svg class="h-4 w-4 mr-1" fill="currentColor" viewBox="0 0 20 20"><path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"></path></svg>
+                                    設為使用者
+                                </a>
+                                <a href="#" class="inline-flex items-center text-blue-600 hover:text-blue-900 transition-colors duration-200 mr-2">
+                                    <svg class="h-4 w-4 mr-1" fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884zM18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
+                                    寄信
+                                </a>
+                                <a href="#" class="inline-flex items-center text-red-600 hover:text-red-900 transition-colors duration-200">
+                                    <svg class="h-4 w-4 mr-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"></path></svg>
+                                    刪除
+                                </a>
+                            </td>
+                        </tr>
+                        </tbody>
+                </table>
+            </div>
+            
+        </div>
+    </main>
+
+</body>
+</html>
+
